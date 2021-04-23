@@ -1,10 +1,18 @@
 <?php
 
-class SiteController extends Controller
+
+
+
+
+class SiteController extends ControllerAdvanced
 {
+	
+	public $itensMenu = array();
 	/**
 	 * Declares class-based actions.
 	 */
+	
+	
 	public function actions()
 	{
 		return array(

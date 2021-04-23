@@ -20,14 +20,16 @@ return array(
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-		/*
+		
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'Enter Your Password Here',
+			'password'=> 'san',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
-			'ipFilters'=>array('127.0.0.1','::1'),
+			'ipFilters'=>array('127.0.0.1',
+			'::1',
+			$_SERVER["REMOTE_ADDR"]),
 		),
-		*/
+		
 	),
 
 	// application components
@@ -35,20 +37,20 @@ return array(
 
 		'user'=>array(
 			// enable cookie-based authentication
-			'allowAutoLogin'=>true,
+			'allowAutoLogin'=>false,
 		),
 
 		// uncomment the following to enable URLs in path-format
-		/*
-		'urlManager'=>array(
-			'urlFormat'=>'path',
-			'rules'=>array(
-				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
-				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
-				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-			),
-		),
-		*/
+		
+		// 'urlManager'=>array(
+		// 	'urlFormat'=>'path',
+		// 	'rules'=>array(
+		// 		'<controller:\w+>/<id:\d+>'=>'<controller>/view',
+		// 		'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
+		// 		'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+		// 	),
+		// ),
+		
 
 		// database settings are configured in database.php
 		'db'=>require(dirname(__FILE__).'/database.php'),
@@ -82,4 +84,5 @@ return array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
 	),
+
 );
